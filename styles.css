@@ -1,0 +1,83 @@
+
+body {
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+text-align: center;
+justify-content: center;
+font-family: 'Jost', sans-serif;
+}
+
+h1 {
+    color: whitesmoke;
+    margin-top: 4em;
+    margin-bottom: 1.2em;
+    font-size: 42px;
+    text-align: center;
+    font-weight: normal;
+    text-decoration: underline overline 2px;
+    text-underline-offset: 16px;
+}
+
+label {
+    color: whitesmoke;
+    font-size: 22px;
+}
+input {
+    background-color: whitesmoke;
+    border: none;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 2px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+button {
+    
+    border: 0.12rem solid;
+    border-color: rgba(0,0,0,0.15);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px 14px;
+    background-color: transparent;
+    opacity: 0.8;
+    color: whitesmoke;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+}
+
+button:hover {
+    background: rgba(0,0,0,0.2);
+    color: whitesmoke;
+    transition: 0.5s;
+}
+
+button:active {
+    transform: scale(1.08, 1.08)
+}
+
+#output {
+    font-size: 24px;
+    color: whitesmoke;
+    margin-top: 30px;
+    background-color: rgba(0,0,0,0.03);
+    margin-right: 725px;
+    margin-left: 725px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+#silly {
+    justify-items: center;
+    background-color: transparent;
+    color: transparent;
+ }
+
+ footer {
+    color: whitesmoke;
+    font-size: 11px;
+    position: inline-block;
+    margin-top: 175px;
+ }
+
+ 
