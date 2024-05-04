@@ -18,10 +18,10 @@ const checkInput = (e) => {
         return;
     }
 }
-//Perform conversion function if the input is valid
+//Function to convert if the input is valid
 function convertNums (num) {
-    //Object to assign numerals
-    let romanLookup = {
+    //Object to assign numerals. Start with higher numbers first to pass what is not needed
+    let romanTable = {
         M: 1000,
         CM: 900,
         D: 500,
@@ -36,29 +36,30 @@ function convertNums (num) {
         IV: 4,
         I: 1
     }
-    //Roman will be the variable to assign number matches to from romanLookup
-    let roman = '';
-    //Assign iterator to start at 0
+    //'result' is the general variable to that roman numeral matches will be assigned/added to
+    let result = '';
+    //Assign iterator to start counting at 0
     let i = 0;
-    //For loop with condition to iterate through romanLookup with i
-    for (i in romanLookup) {
-        //Run for loop while the number is greater than or equal to romanLookup
-        while (num >= romanLookup[i]) {
-            //Each 'roman' will be added to i as it iterates through the object
-            roman += i;
-            /* Every value matched as it iterates will be 'removed' from 
-            romanLookup in the instance so it can move onto the next value in romanLookup */
-            num -= romanLookup[i]
+    /* 'For in' loops iterate through properties of an object, returning each name of the property and its numeric index 
+    - romanTable is an object containing properties with numeric indexes */
+    for (i in romanTable) {
+        /* 'While' loops will continue to iterate as long as the condition is true. 
+        It will iterate with i through each romanTable property while the 'input' number value is still greater. */
+        while (num >= romanTable[i]) {
+            //Each item match via iteration will be returned to 'result'  
+            result += i;
+            /* Every item match will be 'removed' from 
+            romanTable in the instance, so it can move onto the next property.  */
+            num -= romanTable[i]
         }
     }
-    /* Return total converted value - which was assigned to roman -
-    equal the initial input value */
-    return roman;
+    /* Return total converted value that has been assigned to 'result' */
+    return result;
 }
 //Add event listener for button
 convertBtn.addEventListener('click', checkInput)
 
-/* Optional: Add regex to restrict non-digit character.  
+/* Optional: Add regex to restrict non-digit characters.  
 \D matches any non-digit character. 
 g finds all matches. */
 input.addEventListener('keydown', function (e) {
